@@ -1,6 +1,6 @@
 <!-- app/components/chirps-list/template.hbs -->
 
-{{#each chirps as |chirp|}}
+{{#each sortedChirps as |chirp|}}
   {{chirps-list/chirp-message chirp=chirp}}
 {{else}}
   <div class="no-chirps">
