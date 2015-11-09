@@ -10,4 +10,6 @@ export default DS.Model.extend({
   // New attributes:
   aboutMe: DS.attr('string'),
   joinedAt: DS.attr('date'),
+  chirps: DS.hasMany('chirp', { async: true })
+
 });
