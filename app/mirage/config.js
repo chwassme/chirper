@@ -9,4 +9,4 @@ export default function() {
   this.get('/chirps/:id');
   this.get('/users');
   
-};
+}
