@@ -10,17 +10,17 @@
 
       {{#link-to "user.index" tagName="li"}}
         <h4>Chirps</h4>
-        <p>0</p>
+        <p>{{model.user.numberOfChirps}}</p>
       {{/link-to}}
 
       {{#link-to "user.following" tagName="li"}}
         <h4>Following</h4>
-        <p>0</p>
+        <p>{{model.user.numberOfFollowing}}</p>
       {{/link-to}}
 
       {{#link-to "user.followers" tagName="li"}}
         <h4>Followers</h4>
-        <p>0</p>
+        <p>{{model.user.numberOfFollowers}}</p>
       {{/link-to}}
 
     </ul>
@@ -31,8 +31,8 @@
 
   <aside>
     <h1>t4t5</h1>
-    <p class="description">I like open-source software!</p>
-    <p class="joined">Joined 5 minutes ago</p>
+    <p class="description">{{model.user.aboutMe}}</p>
+    <p class="joined">{{model.user.joinedAt}}</p>
   </aside>
 	
   <main>

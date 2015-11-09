@@ -6,5 +6,8 @@ export default DS.Model.extend({
   username: DS.attr('string'),
   numberOfChirps: DS.attr('number'),
   numberOfFollowing: DS.attr('number'),
-  numberOfFollowers: DS.attr('number')
+  numberOfFollowers: DS.attr('number'),
+  // New attributes:
+  aboutMe: DS.attr('string'),
+  joinedAt: DS.attr('date'),
 });
