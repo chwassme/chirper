@@ -10,6 +10,8 @@ export default [
      // The new data:
     aboutMe: 'I like making stuff.',
     joinedAt: new Date('2015-06-08T09:30:26'),
-    chirps: [1, 2]
+    chirps: [1, 2],
+    followees: [1],
+    followers: [1]
   }
 ];

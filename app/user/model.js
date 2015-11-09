@@ -7,9 +7,16 @@ export default DS.Model.extend({
   numberOfChirps: DS.attr('number'),
   numberOfFollowing: DS.attr('number'),
   numberOfFollowers: DS.attr('number'),
-  // New attributes:
+
   aboutMe: DS.attr('string'),
   joinedAt: DS.attr('date'),
-  chirps: DS.hasMany('chirp', { async: true })
+  chirps: DS.hasMany('chirp', { async: true }),
+
+  followees: DS.hasMany('user', {
+  	inverse: 'followers'
+  }),
+  followers: DS.hasMany('user', {
+  	inverse: 'followers'
+  })
 
 });
