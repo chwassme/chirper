@@ -1,5 +1,6 @@
 <!-- app/home/template.hbs -->
   
+
 <h1>Home</h1>
 
 <div class="page-container home-page">
@@ -9,7 +10,8 @@
   </aside>
 
   <main>
-    {{status-update}}
+    {{status-update openComposeModal=(action 'openComposeModal')}}
     {{chirps-list chirps=model.chirps}}
   </main>
 </div>
+
