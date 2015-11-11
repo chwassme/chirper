@@ -8,6 +8,8 @@ export default Ember.Component.extend({
     Ember.run.scheduleOnce('afterRender', () => {
       this.$().find('textarea').focus();
     });
-  })
+  }),
+
+  store: Ember.inject.service()
   
 });
