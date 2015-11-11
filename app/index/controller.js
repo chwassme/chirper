@@ -15,5 +15,8 @@ export default Ember.Controller.extend({
 		this.set('errorMessage', 'Wrong username or password!');
 	  }
     }
-  }
+  },
+  valuesChanged: Ember.observer('username', 'password', function() {
+  	this.set('errorMessage', false);
+  }),
 });
