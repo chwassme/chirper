@@ -10,6 +10,14 @@ export default Ember.Component.extend({
     });
   }),
 
+ 	// We need to initialize chirpText so that the computed >
+	// > property doesn't raise an exception when it's undefined
+	chirpText: '',
+
+	remainingChars: Ember.computed('chirpText', function() {
+	  return 140 - this.get('chirpText').length;
+	}),
+
   store: Ember.inject.service(),
 
   actions: {
