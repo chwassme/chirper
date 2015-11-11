@@ -17,6 +17,14 @@ module.exports = function(environment) {
       }
     },
 
+    'simple-auth': {
+      authorizer: 'simple-auth-authorizer:oauth2-bearer',
+      crossOriginWhitelist: ['http://localhost:9000']
+    },
+    'simple-auth-oauth2': {
+      serverTokenEndpoint: 'http://localhost:9000/token'
+    },
+
     contentSecurityPolicy: {
       'connect-src': "http://localhost:9000"
     },
