@@ -17,7 +17,7 @@ export default Ember.Component.extend({
 	remainingChars: Ember.computed('chirpText', function() {
 	  return 140 - this.get('chirpText').length;
 	}),
-	
+
 	noCharsLeft: Ember.computed('remainingChars', function() {
 	  return (this.get('remainingChars') < 0);
 	}),
@@ -26,6 +26,12 @@ export default Ember.Component.extend({
 
   actions: {
    postChirp: function() {
+   	
+   	if (this.get('noCharsLeft')) {
+      swal("Woops!", "You have too many characters in your chirp!", "error");
+      return false;
+    }
+
     // Retrieve the value of {{textarea}}
     var text = this.get('chirpText');
 
