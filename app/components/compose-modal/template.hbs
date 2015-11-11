@@ -1,1 +1,9 @@
-{{yield}}
+<!-- app/components/compose-modal/template.hbs -->
+
+<h6>Compose Chirp</h6>
+
+{{textarea value=chirpText}}
+
+<button class="chirp" {{action "postChirp"}}>Chirp</button>
+
+<p class="remaining-chars">140</p>
