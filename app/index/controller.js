@@ -4,6 +4,9 @@ import Ember from 'ember';
 import config from '../config/environment';
 
 export default Ember.Controller.extend({
+
+  authenticator: 'simple-auth-authenticator:oauth2-password-grant',
+
   actions: {
     signup: function() {
     var userData = {
@@ -30,6 +33,14 @@ export default Ember.Controller.extend({
       var username = this.get('username');
       var password = this.get('password');
       console.log(`Trying to log in with ${username} and ${password}`);  
+      this.get('session').authenticate(this.authenticator, {
+        identification: username,
+        password: password
+      }).then(() => {
+        this.transitionToRoute('home');
+      }, () => {
+        this.set('errorMessage', 'Wrong username or password!');
+      });
     }
   },
   valuesChanged: Ember.observer('username', 'password', function() {
