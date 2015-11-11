@@ -8,5 +8,6 @@ export default function() {
   this.get('/chirps');
   this.get('/chirps/:id');
   this.get('/users');
+  this.post('/chirps');
   
 }
