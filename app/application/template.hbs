@@ -5,15 +5,18 @@
 
     <div class="logo"></div>
 
-    <nav>
-  {{#link-to "home"}}Home{{/link-to}}
+    {{#if session.isAuthenticated}} <!-- New! -->
+  <nav>
+    {{#link-to "home"}}Home{{/link-to}}
 
-  {{#link-to "user"}}
-    <img class="avatar" src="/images/avatar.jpg" />Hallo
-  {{/link-to}}
+    {{#link-to "user"}}
+      <img class="avatar" src="/images/avatar.jpg" />
+      {{session.currentUser.username}} <!-- New! -->
+    {{/link-to}}
 
-  <button class="chirp" {{action 'toggleComposeModal'}}>Chirp</button>
-</nav>
+    <button class="chirp" {{action "toggleComposeModal"}}>Chirp</button>
+    </nav>
+  {{/if}}
 
   </div>
 </header>
