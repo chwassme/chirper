@@ -6,4 +6,4 @@
 
 <button class="chirp" {{action "postChirp"}}>Chirp</button>
 
-<p class="remaining-chars">{{remainingChars}}</p>
+<p class="remaining-chars {{if noCharsLeft 'warning'}}">{{remainingChars}}</p>

@@ -17,6 +17,10 @@ export default Ember.Component.extend({
 	remainingChars: Ember.computed('chirpText', function() {
 	  return 140 - this.get('chirpText').length;
 	}),
+	
+	noCharsLeft: Ember.computed('remainingChars', function() {
+	  return (this.get('remainingChars') < 0);
+	}),
 
   store: Ember.inject.service(),
 
