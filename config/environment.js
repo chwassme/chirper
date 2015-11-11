@@ -6,6 +6,10 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
+    
+    apiURL: 'http://localhost:9000', // <-- Add this line
+    'ember-cli-mirage': { enabled: false },// <-- And this
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
