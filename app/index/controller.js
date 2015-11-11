@@ -9,10 +9,11 @@ export default Ember.Controller.extend({
       var password = this.get('password');
 
       if (username === 'letme' && password === 'in') {
-        this.transitionToRoute('home');
-      } else {
-        sweetAlert('Oops!', 'Wrong username or password!', 'error');
-      }
+		this.transitionToRoute('home');
+	  } else {
+		// We replace our SweetAlert-function with a simple variable containing the error message
+		this.set('errorMessage', 'Wrong username or password!');
+	  }
     }
   }
 });
